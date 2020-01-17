@@ -1233,6 +1233,7 @@ bool WorldObject::IsWithinLOSInMap(WorldObject const* obj, LineOfSightChecks che
     if (!IsInMap(obj))
         return false;
 
+    // origin point
     float ox, oy, oz;
     if (obj->GetTypeId() == TYPEID_PLAYER)
     {
@@ -1242,6 +1243,7 @@ bool WorldObject::IsWithinLOSInMap(WorldObject const* obj, LineOfSightChecks che
     else
         obj->GetHitSpherePointFor({ GetPositionX(), GetPositionY(), GetPositionZ() + GetCollisionHeight() }, ox, oy, oz);
 
+    // target point
     float x, y, z;
     if (GetTypeId() == TYPEID_PLAYER)
     {
